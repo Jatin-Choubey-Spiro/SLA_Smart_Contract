@@ -1,5 +1,6 @@
-This is the repository for SLA Signing DApp,
-Tested on Ganache UI.
+**This is the repository for SLA Signing DApp**
+*Tested on Ganache UI.*
+
 Tech stack used:-
 - Solidity Compiler (v0.8.0)
 - Truffle (v5.11.5)
@@ -19,6 +20,7 @@ Steps to see the code work in the local test environment (Ganache UI).
     - ChainID: 1337
 - Import the first private two keys from the Ganache UI wallets to Metamask.
 
+**Deploy Contract and interact with DApp**
 1. Compile the Smart Contract
     - truffle compile
 
