@@ -14,8 +14,8 @@ Note: Ganache CLI doesn't support EIP-1559.
 Steps to see the code work in the local test environment (Ganache UI).
 - truffle init
 - npm install
-- Run the Ganache UI and quickstart and Ethereum Project.
-- Add a network manually for the Ganache UI and switch to it.
+- Run the Ganache UI and quickstart, Ethereum Project.
+- Add a network manually in Metamask for the Ganache UI and switch to it.
     - RPC URL: HTTP:\\127.0.0.1:7545
     - ChainID: 1337
 - Import the first private two keys from the Ganache UI wallets to Metamask.
