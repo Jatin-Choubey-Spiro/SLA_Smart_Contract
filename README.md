@@ -20,10 +20,10 @@ Steps to see the code work in the local test environment (Ganache UI).
 - Import the first private two keys from the Ganache UI wallets to Metamask.
 
 1. Compile the Smart Contract
-    truffle compile
+    - truffle compile
 
 2. Deploy the contract
-    truffle migrate --network ganacheUI (You can now see this contract got deployed on the 'transaction' section of the Local dummy blockchain (Ganache UI)).
+    - truffle migrate --network ganacheUI (You can now see this contract got deployed on the 'transaction' section of the Local dummy blockchain (Ganache UI)).
 
 3. Move the newly created build folder, consisting of Contracts ABI .json file, to the frontend's src folder.(So that frontend can interact with the smart contract)
 
