@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Web3 from 'web3';
 import SpiroRapidoAgreement from './build/contracts/SpiroRapidoAgreement.json';
 import Login from './login';
+import spiroLogo from './logos/spiro.png';  // Adjust the path according to your folder structure
+import rapidoLogo from './logos/rapido.png';
 
 function App() {
   const [currentAccount, setCurrentAccount] = useState('');
@@ -14,14 +16,14 @@ function App() {
 
   const handleLogin = () => {
     setIsAuthenticated(true);
-    loadBlockchainData(); // Load blockchain data after login
+    loadBlockchainData(); // Load blockchain data only after successful login
   };
 
   const loadBlockchainData = async () => {
     try {
       if (window.ethereum) {
         const web3 = new Web3(window.ethereum);
-        await window.ethereum.enable();
+        await window.ethereum.enable(); // Prompt MetaMask only after login
 
         const accounts = await web3.eth.getAccounts();
         setCurrentAccount(accounts[0]);
@@ -104,10 +106,6 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    loadBlockchainData();
-  }, []);
-
   return (
     <div>
       {isAuthenticated ? (
@@ -115,7 +113,7 @@ function App() {
           <div style={styles.header}>
             <h1>Spiro-Rapido SLA Agreement</h1>
           </div>
-          <div style={styles.buttonRow}>
+          <div style={styles.centerButtonRow}>
             <button onClick={loadBlockchainData} style={styles.button}>Connect Wallet</button>
           </div>
           <p>Current Account: {currentAccount}</p>
@@ -151,8 +149,14 @@ function App() {
               </div>
             </div>
             <div style={styles.buttonRow}>
-              <button onClick={signAsSpiro} style={styles.button}>Sign as Spiro</button>
-              <button onClick={signAsRapido} style={styles.button}>Sign as Rapido</button>
+              <button onClick={signAsSpiro} style={styles.button}>
+                Counter Sign &nbsp;
+                <img src={spiroLogo} alt="Spiro Logo" style={styles.logo} />
+              </button>
+              <button onClick={signAsRapido} style={styles.button}>
+                Counter Sign &nbsp;
+                <img src={rapidoLogo} alt="Rapido Logo" style={styles.logo} />
+              </button>
             </div>
           </div>
         </div>
@@ -167,10 +171,10 @@ const styles = {
   container: {
     fontFamily: 'Arial, sans-serif',
     maxWidth: '800px',
-    maxHeight: '100vh', // Restrict the container to the viewport height
+    maxHeight: '100vh',
     overflowY: 'auto', // Enable vertical scrolling
-    padding: '20px', // Add some padding for aesthetics
-    boxSizing: 'border-box', // Ensure padding doesn't affect the width/height
+    padding: '20px',
+    boxSizing: 'border-box',
     margin: '0 auto',
     border: '1px solid #ccc',
     borderRadius: '10px',
@@ -211,8 +215,20 @@ const styles = {
     textOverflow: 'ellipsis',
     wordWrap: 'break-word',
   },  
+  logo: {
+    width: '20px',
+    height: 'auto',
+    marginRight: '10px',
+  },
   buttonRow: {
+    display: 'flex',
+    justifyContent: 'space-between',
     textAlign: 'center',
+    marginTop: '20px',
+  },
+  centerButtonRow: {
+    display: 'flex',
+    justifyContent: 'center',
     marginTop: '20px',
   },
   button: {
@@ -224,7 +240,8 @@ const styles = {
     backgroundColor: '#4CAF50',
     color: 'white',
     marginRight: '10px',
+    display: 'flex',
+    alignItems: 'center',
   },
-};
-
+}
 export default App;

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import './login.css'; // Import the CSS file for styling
+import './login.css';
+import spiroLogo from './logos/spiro.png';
+import rapidoLogo from './logos/rapido.png';
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -7,7 +9,7 @@ const Login = ({ onLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your authentication logic here
+    // Authentication logic here
     if (username === 'user' && password === 'password') {
       onLogin();
     } else {
@@ -18,7 +20,11 @@ const Login = ({ onLogin }) => {
   return (
     <div className="login-container">
       <div className="login-card">
-        <h1 className="login-title">Hey There</h1>
+        <h1 className="login-title">
+          <img src={spiroLogo} alt="Spiro Logo" className="logo-left" />
+          Hey There
+          <img src={rapidoLogo} alt="Rapido Logo" className="logo-right" />
+        </h1>
         <p className="login-subtitle">Sign in to continue to Spiro-Rapido DApp</p>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
