@@ -1,3 +1,5 @@
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+require('dotenv').config();
 module.exports = {
     // Specify multiple networks for flexibility
     networks: {
@@ -13,6 +15,19 @@ module.exports = {
         port: 7545,        // Ganache UI default port
         network_id: "*",   // Match any network ID
       },
+      // Sepolia testnet configuration
+      sepolia: {
+        provider: () => new HDWalletProvider (
+          process.env.SEPOLIA_PRIVATE_KEY,
+          process.env.INFURA_PROJECT_ID
+        ),
+        network_id: 11155111,
+        // gas: 590000,      // Gas limit
+        // gasPrice: 20986814982,
+        confirmations: 2,   // Confirmations to wait between deployments
+        timeoutBlocks: 5, // Timeout for deployment
+        skipDryRun: false,
+      },
       // Ethereum Mainnet (requires Infura or other RPC providers)
       mainnet: {
         provider: () => new HDWalletProvider(
@@ -23,7 +38,7 @@ module.exports = {
         gas: 5500000,       // Gas limit
         confirmations: 2,   // Confirmations to wait between deployments
         timeoutBlocks: 200, // Timeout for deployment
-        skipDryRun: true,   // Skip dry run before deployment
+        skipDryRun: false,   // Skip dry run before deployment
       },
       // Ethereum Rinkeby Testnet
       rinkeby: {
@@ -59,3 +74,8 @@ module.exports = {
     },
   };
   
+
+  // 135239591407009468
+  // 59757777995343568
+  // 121500000000000000
+  // 46018186588334100
