@@ -8,7 +8,7 @@ A decentralized application (DApp) for signing and managing Service Level Agreem
 - **Solidity Compiler**: `v0.8.0`
 - **Truffle**: `v5.11.5`
 - **Ganache CLI**: `v7.9.1`
-- **Node.js**: `v22.11.0`
+- **Node.js**: `v20.18.1`
 - **Web3.js**: `v1.10.0`
 - **MetaMask Wallet**
 - **Ganache UI**: `v2.7.1.0`
