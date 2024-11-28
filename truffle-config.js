@@ -72,10 +72,8 @@ module.exports = {
         version: "0.8.0", // Solidity version
       },
     },
+    plugins: ['truffle-plugin-verify'],
+    api_keys: {
+      etherscan: process.env.ETHERSCAN_API_KEY
+    },
   };
-  
-
-  // 135239591407009468
-  // 59757777995343568
-  // 121500000000000000
-  // 46018186588334100
