@@ -4782,12 +4782,12 @@
     "11155111": {
       "events": {},
       "links": {},
-      "address": "0xb731C4b0d2A66D0742Ac551378970FeA0d03A476",
-      "transactionHash": "0xc2a3337aa386af3ec2bb8b524be760b8da227c0eef0bc1464d1d9d21a5d6c5d7"
+      "address": "0x2a30318da8CFD74BC876d0700C15C49a81198F7f",
+      "transactionHash": "0x29dd77c4142c8778c7e00cd077fea0cbe0b4872e51f4abc1b39658a2860ed0f2"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-11-23T04:35:46.141Z",
+  "updatedAt": "2024-11-28T06:28:02.282Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
