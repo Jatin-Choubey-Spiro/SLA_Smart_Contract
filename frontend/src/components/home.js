@@ -111,10 +111,10 @@ const Home = () => {
       </button>
       <p>Current Account: {currentAccount}</p>
       <div style={styles.section}>
-        <h2 style={styles.sectionHeader}>Agreement Details</h2>
+        <h2 style={styles.sectionHeader}>DEMO Agreement</h2>
         <ul style={styles.list}>
           <li>Both parties will adhere to the agreed SLA conditions.</li>
-          <li>40,000 EV bikes will be leased by Spiro to Rapido.</li>
+          <li>"X" number of EV bikes will be leased by Spiro to Rapido.</li>
           <li>Rapido will maintain the bikes as per the maintenance guidelines.</li>
           <li>Monthly payments to Spiro are due by the 5th of each month.</li>
           <li>Rapido must provide monthly usage and mileage reports.</li>
