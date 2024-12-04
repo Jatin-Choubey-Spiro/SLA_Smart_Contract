@@ -40,7 +40,7 @@ A decentralized application (DApp) for signing and managing Service Level Agreem
     truffle compile
 2. **Deploy the contract**
     ```bash
-    truffle migrate network <network>
+    truffle migrate --network <network>
 3. **verify and Publish the Contract.**
 - install the truffle verification plugin
     ```bash
